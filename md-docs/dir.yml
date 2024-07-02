@@ -7,6 +7,7 @@
 - IO虚拟化: 6
 - 网络虚拟化: 7
 - tools: 8
+- tier-mm: 9
 qemu:
 - intro: 1
 kvm:
