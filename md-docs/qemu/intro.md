@@ -7,15 +7,31 @@
 
 qemu 在 linux 上的编译过程参考 [Hosts/Linux](https://wiki.qemu.org/Hosts/Linux)
 
+安装依赖
+
 ```bash
-sudo apt-get install git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build
+sudo apt install ninja-build build-essential zlib1g-dev pkg-config libglib2.0-dev binutils-dev libpixman-1-dev libfdt-dev
 ```
+
+编译
+
+```bash
+mkdir build && cd build
+../configure --target-list=x86_64-softmmu --enable-debug --enable-kvm --enable-slirp
+```
+
+> `--target-list=x86_64-softmmu` 表示只编译 x86_64 架构的 qemu, 如果不指定的话会编译所有架构的
+>
+> `--enable-kvm` 几乎所有 x86 CPU 都支持了 qemu 的 kvm 加速, 目前有的处理器还没有支持(比如 RISCV)
+> 
+> `--enable-slirp` 用于支持 net 模块
+
+## kvm
 
 ```bash
 sudo apt install libvirt-clients libvirt-daemon-system bridge-utils virtinst libvirt-daemon virt-manager
 ```
 
-## kvm
 
 ```bash
 sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virt-manager
