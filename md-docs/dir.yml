@@ -1,5 +1,6 @@
 .:
 - README: 1
+virtual:
 - 虚拟化技术简介: 2
 - research: 3
 - 内存虚拟化: 4
@@ -11,4 +12,6 @@
 qemu:
 - intro: 1
 kvm:
+- intro: 1
+cxl:
 - intro: 1

@@ -1,7 +1,11 @@
 
 # intro
 
+源码仓库位于 [gitlab qemu](https://gitlab.com/qemu-project/qemu)
+
 ## QEMU
+
+qemu 在 linux 上的编译过程参考 [Hosts/Linux](https://wiki.qemu.org/Hosts/Linux)
 
 ```bash
 sudo apt-get install git libglib2.0-dev libfdt-dev libpixman-1-dev zlib1g-dev ninja-build
