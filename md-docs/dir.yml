@@ -11,7 +11,7 @@ virtual:
 - tier-mm: 9
 qemu:
 - intro: 1
-kvm:
-- intro: 1
+- system: 2
+- tcg: 3
 cxl:
 - intro: 1

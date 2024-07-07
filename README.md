@@ -1,6 +1,13 @@
 # qemu
 
-虚拟化技术
+本项目为笔者对于虚拟化技术的学习笔记, 包括 
+
+- qemu 的使用和源码阅读
+- qemu cxl 的支持
+
+观前提示: 对于 qemu 的源码参考并不具有时效性, 笔者正在积极参与 qemu 社区并改进源代码, 阅读时最新的版本为 v9.0.1, commit hash `7914bd`
+
+在线文档: [qemu document](https://luzhixing12345.github.io/qemu/)
 
 ## 参考
 
@@ -35,3 +42,5 @@
   - [kvm虚拟化实践](https://github.com/junneyang/kvm-practice)
   - [2023秋冬季训练营第三阶段-虚拟化方向](https://github.com/arceos-hypervisor/2023-virtualization-campus)
   - [learn-kvm](https://github.com/yifengyou/learn-kvm)
+- qemu
+  - [lifeislife QEMU-源码分析](https://lifeislife.cn/categories/QEMU-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/)

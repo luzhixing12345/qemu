@@ -26,6 +26,12 @@ mkdir build && cd build
 > 
 > `--enable-slirp` 用于支持 net 模块
 
+```bash
+-cpu host
+```
+
+> qemu + linux kernel 调试见 [编译内核](https://luzhixing12345.github.io/klinux/articles/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8/)
+
 ## kvm
 
 ```bash
