@@ -15,3 +15,5 @@ qemu:
 - tcg: 3
 cxl:
 - intro: 1
+kvm:
+- intro: 1
