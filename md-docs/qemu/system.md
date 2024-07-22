@@ -693,7 +693,8 @@ void qemu_init_subsystems(void)
 
 `module_call_init` 根据传入的type类型,遍历对应的链表,并执行当前元素e->init()
 
-```c{16}
+```c{17}
+#define QTAILQ_FOREACH() ...
 static ModuleTypeList init_type_list[MODULE_INIT_MAX];
 static bool modules_init_done[MODULE_INIT_MAX];
 
@@ -919,3 +920,4 @@ static void type_initialize(TypeImpl *ti)
 - [qemu源码分析(一)-- QOM类创建流程](https://zhuanlan.zhihu.com/p/636763565)
 - [qemu源码分析(二)-- QOM类设备初始化](https://zhuanlan.zhihu.com/p/637216343)
 - [虚拟仿真技术 专栏](https://www.zhihu.com/column/c_1571975874009907200)
+- [【原创】Linux虚拟化KVM-Qemu分析(五)之内存虚拟化](https://www.cnblogs.com/LoyenWang/p/13943005.html)

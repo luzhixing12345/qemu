@@ -47,3 +47,5 @@ main [system/main.c]
 ## 参考
 
 - [qemu cxl](https://www.qemu.org/docs/master/system/devices/cxl.html)
+- [lpc LPC2021 - CXL.pdf](https://lpc.events/event/11/contributions/906/attachments/743/1399/LPC2021%20-%20CXL.pdf)
+- [synopsys introduction-cxl-device-types](https://www.synopsys.com/blogs/chip-design/introduction-cxl-device-types.html)
