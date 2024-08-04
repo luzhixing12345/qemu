@@ -907,6 +907,36 @@ static void type_initialize(TypeImpl *ti)
 
 总结一下整体流程就是: type_init中调用type_register_static 将函数初始化的设备信息插入到 type_hashtable 中,在qemu_machine_create 时通过从hash表中遍历, 找到每一个 TypeImpl, 然后往下调用 type_initialize 执行 class_init
 
+## device
+
+```txt
+main [system/main.c]
+  qemu_init [system/vl.c]
+    qmp_x_exit_preconfig [system/vl.c]
+      qemu_create_cli_devices [system/vl.c]
+        qemu_opts_foreach [util/qemu-option.c]
+          device_init_func [system/vl.c]
+            qdev_device_add [system/qdev-monitor.c]
+              qdev_device_add_from_qdict [system/qdev-monitor.c]
+                qdev_new [hw/core/qdev.c]
+                  object_new [qom/object.c]
+                    object_new_with_type [qom/object.c]
+                      object_initialize_with_type [qom/object.c]
+                        object_init_with_type [qom/object.c]
+                          object_init_with_type [qom/object.c]
+                            vhost_user_fs_pci_instance_init [hw/virtio/vhost-user-fs-pci.c]
+                              virtio_instance_init_common [hw/virtio/virtio.c]
+                                object_initialize_child_with_props [qom/object.c]
+                                  object_initialize_child_with_propsv [qom/object.c]
+                                    object_initialize [qom/object.c]
+                                      object_initialize_with_type [qom/object.c]
+                                        object_init_with_type [qom/object.c]
+                                          vuf_instance_init [hw/virtio/vhost-user-fs.c]
+
+```
+qmp_x_exit_preconfig
+qemu_create_cli_devices
+
 ## 参考
 
 - [菜鸡读QEMU源码](https://www.cnblogs.com/from-zero/p/12383652.html)

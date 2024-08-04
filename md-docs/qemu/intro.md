@@ -18,6 +18,7 @@ sudo apt install ninja-build build-essential zlib1g-dev pkg-config libglib2.0-de
 ```bash
 mkdir build && cd build
 ../configure --target-list=x86_64-softmmu --enable-debug --enable-kvm --enable-slirp
+bear -- make -j`nproc`
 ```
 
 > `--target-list=x86_64-softmmu` 表示只编译 x86_64 架构的 qemu, 如果不指定的话会编译所有架构的
