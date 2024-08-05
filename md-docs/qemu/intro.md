@@ -1,11 +1,5 @@
 
-# intro
-
-源码仓库位于 [gitlab qemu](https://gitlab.com/qemu-project/qemu)
-
-## qemu
-
-qemu 在 linux 上的编译过程参考 [Hosts/Linux](https://wiki.qemu.org/Hosts/Linux)
+# qemu
 
 安装依赖
 
@@ -32,6 +26,8 @@ bear -- make -j`nproc`
 ```
 
 > qemu + linux kernel 调试见 [编译内核](https://luzhixing12345.github.io/klinux/articles/%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B/%E7%BC%96%E8%AF%91%E5%86%85%E6%A0%B8/)
+>
+> qemu 在 linux 上的编译过程参考 [Hosts/Linux](https://wiki.qemu.org/Hosts/Linux)
 
 ## kvm
 
@@ -65,18 +61,22 @@ virt-manager
 
 qemu 是一个模拟器,它向Guest OS模拟CPU和其他硬件,Guest OS认为自己和硬件直接打交道, 其实是同qemu模拟出来的硬件打交道,qemu将这些指令转译后交给真正的硬件执行.
 
-KVM 最初也是一个虚拟化解决方案, 后被合并入 Linux 内核主线, 现如今作为 Linux 内核的模块. 它的主要特点是如果当前 CPU 支持硬件虚拟化, 例如采用硬件辅助虚拟化技术 Intel-VT,AMD-V, 内存的相关如Intel的EPT和AMD的RVI技术来加速虚拟化.
+KVM 最初也是一个虚拟化解决方案, 后被合并入 Linux 内核主线, 现如今作为 Linux 内核的模块. 它的主要特点是如果当前 CPU 支持硬件虚拟化, 例如采用硬件辅助虚拟化技术 Intel-VT,AMD-V, 内存的相关如 Intel 的 EPT 和 AMD 的 RVI 技术来加速虚拟化.
+
+> 详见 [EPT](./EPT.md)
 
 使用 KVM 的前提是需要**模拟的 CPU 架构和当前硬件的 CPU 架构一致**, 那么此时 Guest OS 的CPU指令就不用再经过qemu转译直接运行,大大提高了速度, KVM通过 `/dev/kvm` 暴露接口,用户态程序可以通过 `ioctl` 函数来访问这个接口.
 
-> RISC-V 目前还没有可用的支持 H 扩展的硬件虚拟化的开发板
+> RISC-V 目前(2023)还没有可用的支持 H 扩展的硬件虚拟化的开发板
 
-KVM内核模块**本身只能提供CPU和内存的虚拟化**, 所以如果想要模拟一个完整的系统就需要结合 qemu 来完成其他 IO 设备的模拟. 因此 qemu 将 KVM 整合进来,通过 `ioctl` 调用 `/dev/kvm` 接口,将有关CPU指令和内存的部分交由 KVM 内核模块来做, 其他部分由 qemu 负责, 也就是所谓的 qemu-kvm, 也是目前绝大多数的叫法
+KVM 内核模块**本身只能提供CPU和内存的虚拟化**, 所以如果想要模拟一个完整的系统仍然需要结合 qemu 来完成其他 IO 设备的模拟. 因此 qemu 将 KVM 整合进来,通过 `ioctl` 调用 `/dev/kvm` 接口,将有关CPU指令和内存的部分交由 KVM 内核模块来做, 其他部分由 qemu 负责, 也就是所谓的 qemu-kvm, 也是目前绝大多数的叫法.
 
-- kvm负责cpu虚拟化+内存虚拟化,实现了cpu和内存的虚拟化
+总的来说, 在 qemu-kvm 的模式下, 分工如下:
+
+- kvm 负责cpu虚拟化+内存虚拟化,实现了cpu和内存的虚拟化
 - qemu 模拟IO设备(网卡,磁盘等)
 
-> qemu 本身也可以模拟 CPU/内存 来模拟一个完整的系统, 只不过大多数情况下可以利用 KVM 的优势来加速虚拟化, 因此 qemu-kvm 的叫法更为广泛
+> qemu 本身也可以模拟 CPU/内存 来模拟一个完整的系统, 只不过大多数情况下(x64/amd 等支持 kvm 的 linux kernel)可以利用 KVM 的优势来加速虚拟化, 因此 qemu-kvm 的叫法更为广泛
 
 下图为 KVM 的具体架构细节
 

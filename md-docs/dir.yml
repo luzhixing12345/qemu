@@ -2,18 +2,22 @@
 - README: 1
 - contribute: 2
 virtual:
-- 虚拟化技术简介: 2
-- research: 3
-- 内存虚拟化: 4
-- CPU虚拟化: 5
-- IO虚拟化: 6
-- 网络虚拟化: 7
-- tools: 8
-- tier-mm: 9
+- 虚拟化技术简介: 1
+- research: 2
+- 内存虚拟化: 3
+- CPU虚拟化: 4
+- IO虚拟化: 5
+- 网络虚拟化: 6
+- tools: 7
+- tier-mm: 8
 qemu:
 - intro: 1
-- system: 2
-- tcg: 3
+- glib: 2
+- system: 3
+- tcg: 4
+- vhost-user: 5
+- EPT: 6
+- machine: 7
 cxl:
 - intro: 1
 kvm:

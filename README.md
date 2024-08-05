@@ -43,5 +43,6 @@
   - [2023秋冬季训练营第三阶段-虚拟化方向](https://github.com/arceos-hypervisor/2023-virtualization-campus)
   - [learn-kvm](https://github.com/yifengyou/learn-kvm)
   - [刘超的通俗云计算](https://www.cnblogs.com/popsuper1982/category/589324.html)
+  - [享乐主](https://blog.csdn.net/huang987246510?type=blog)
 - qemu
   - [lifeislife QEMU-源码分析](https://lifeislife.cn/categories/QEMU-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/)
