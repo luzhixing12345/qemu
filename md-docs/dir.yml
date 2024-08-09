@@ -13,11 +13,12 @@ virtual:
 qemu:
 - intro: 1
 - glib: 2
-- system: 3
-- tcg: 4
-- vhost-user: 5
-- EPT: 6
-- machine: 7
+- qom: 3
+- system: 4
+- tcg: 5
+- vhost-user: 6
+- EPT: 7
+- machine: 8
 cxl:
 - intro: 1
 kvm:
