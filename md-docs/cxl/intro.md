@@ -44,6 +44,8 @@ main [system/main.c]
                   cxl_machine_init [hw/cxl/cxl-host.c]
 ```
 
+hw/mem/cxl_type3.c
+
 ## 参考
 
 - [qemu cxl](https://www.qemu.org/docs/master/system/devices/cxl.html)

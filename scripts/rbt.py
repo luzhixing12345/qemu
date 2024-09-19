@@ -20,7 +20,10 @@ class ReverseBacktrace(gdb.Command):
 
         depth = 0
         for depth, (func_name, file_path) in enumerate(reversed(frames)):
-            indent = "  " * depth
+            if depth < 1:
+                indent = "  " * depth
+            else:
+                indent = "  " * (depth - 1) + "└─"
             depth += 1
             print(f"{indent}{func_name} [{file_path[3:]}]")
 
