@@ -46,4 +46,4 @@
   - [享乐主](https://blog.csdn.net/huang987246510?type=blog)
   - [martins3's blog](https://martins3.github.io/) 绝佳
 - qemu
-  - [lifeislife QEMU-源码分析](https://lifeislife.cn/categories/QEMU-%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90/)
+  - [lifeislife QEMU-源码分析](https://lifeislife.cn/tags/qemu/)
