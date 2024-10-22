@@ -54,3 +54,8 @@ dkms.conf
 .vscode/
 compile_commands.json
 .cache
+*.o
+*.d
+*.a
+*.elf
+*.bin

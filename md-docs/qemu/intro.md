@@ -7,7 +7,21 @@
 sudo apt install ninja-build build-essential zlib1g-dev pkg-config libglib2.0-dev binutils-dev libpixman-1-dev libfdt-dev
 ```
 
+```bash
+git clone git@github.com:qemu/qemu.git
+```
+
 编译
+
+> 需要一个 Python 虚拟环境, 建议安装 anaconda
+>
+> [anaconda docs](https://docs.anaconda.com/anaconda/install/linux/)
+>
+> [anaconda repo](https://repo.anaconda.com/archive/)
+>
+> ```bash
+> wget https://repo.anaconda.com/archive/Anaconda3-2024.06-1-Linux-x86_64.sh
+> ```
 
 ```bash
 mkdir build && cd build
@@ -102,3 +116,4 @@ KVM 内核模块**本身只能提供CPU和内存的虚拟化**, 所以如果想�
 - [whats a good source to learn about qemu](https://stackoverflow.com/questions/155109/whats-a-good-source-to-learn-about-qemu)
 - [qemu wiki](https://wiki.qemu.org/Documentation)
 - [KVM-Qemu-Libvirt三者之间的关系](https://zhuanlan.zhihu.com/p/521167414)
+- [Xen和KVM等四大虚拟化架构对比分析](https://support.huawei.com/enterprise/zh/knowledge/EKB1002005920)

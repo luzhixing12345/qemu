@@ -19,6 +19,7 @@ qemu:
 - vhost-user: 6
 - EPT: 7
 - machine: 8
+- args: 9
 cxl:
 - intro: 1
 kvm:

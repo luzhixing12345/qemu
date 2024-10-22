@@ -26,7 +26,7 @@ class PageTableCalculator(gdb.Command):
         try:
             # 将传入的参数转换为虚拟地址
             virt_addr = int(arg, 16)
-            print(f"虚拟地址: 0x{virt_addr:x}")
+            print(f"Virtual address: 0x{virt_addr:x}")
             
             # 计算PGD偏移量
             pgd_offset = (virt_addr & PGD_MASK) >> PGD_INDEX_SHIFT
@@ -56,7 +56,7 @@ class PageTableCalculator(gdb.Command):
             page_offset = virt_addr & PAGE_MASK
             print(f"Page Offset: 0x{page_offset:x}")
             
-            print(f"{VIRUAL_ADDR:x}")
+            print(f"Virtual address mapped from kernel address: 0x{VIRUAL_ADDR:x}")
             
         
         except Exception as e:

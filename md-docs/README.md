@@ -32,3 +32,4 @@
   - [容器虚拟化学习资料](https://github.com/charSLee013/docker?tab=readme-ov-file)
   - [kvm虚拟化实践](https://github.com/junneyang/kvm-practice)
   - [2023秋冬季训练营第三阶段-虚拟化方向](https://github.com/arceos-hypervisor/2023-virtualization-campus)
+  - [learn-kvm](https://github.com/yifengyou/learn-kvm) 好文

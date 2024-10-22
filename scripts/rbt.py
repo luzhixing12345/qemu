@@ -18,6 +18,11 @@ class ReverseBacktrace(gdb.Command):
             frames.append((function_name, file_path))
             frame = frame.older()
 
+        # optional arg, last n functions
+        if arg:
+            n = int(arg)
+            frames = frames[n:]
+
         depth = 0
         for depth, (func_name, file_path) in enumerate(reversed(frames)):
             if depth < 1:
@@ -25,6 +30,6 @@ class ReverseBacktrace(gdb.Command):
             else:
                 indent = "  " * (depth - 1) + "└─"
             depth += 1
-            print(f"{indent}{func_name} [{file_path[3:]}]")
+            print(f"{indent}{func_name} [{file_path}]")
 
 ReverseBacktrace()
